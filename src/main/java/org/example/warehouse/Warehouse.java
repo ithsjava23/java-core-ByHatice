@@ -4,7 +4,6 @@ import java.math.BigDecimal;
 import java.util.*;
 import java.util.stream.Collectors;
 public class Warehouse {
-    private static Warehouse instance;
     private final String name;
     private final List<ProductRecord> products = new ArrayList<>();
     private final List <ProductRecord> updatedProduct = new ArrayList<>();
@@ -12,9 +11,7 @@ public class Warehouse {
         this.name = name;
     }
     public static Warehouse getInstance() {
-        if (instance == null)
-            instance = new Warehouse("MyStore");
-        return instance;
+        return new Warehouse ("");
     }
     public static Warehouse getInstance(String name) {
         return new Warehouse(name);
